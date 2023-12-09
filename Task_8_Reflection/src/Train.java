@@ -3,36 +3,37 @@ public class Train {
     int _count_wagons;
     int _load_capacity;
 
-    Train(String nt, int wg, int lc) {
+    public Train(String nt, int wg, int lc) {
         _number_train = nt;
         _count_wagons = wg;
         _load_capacity = lc;
     }
 
-    Train(String nt) {
+    public Train(String nt) {
         _number_train = nt;
         _count_wagons = 0;
         _load_capacity = 0;
     }
 
-    void InfoTrain() {
-        System.out.println("TRAIN №" + _number_train + "\nLoad capacity: " + _count_wagons
-        + "\nCount of wagons: " + _count_wagons);
+    public void InfoTrain() {
+        System.out.println("TRAIN №" + _number_train + "\nLoad capacity (t): " + _load_capacity
+                + "\nCount of wagons (items): " + _count_wagons);
     }
 
-    String GetNumberTrain() {
+    public String GetNumberTrain() {
         return _number_train;
     }
 
-    int GetCapacity() {
+    public int GetCapacity() {
         return _load_capacity;
     }
 
-    int GetNumWagons() {
+    public int GetNumWagons() {
         return _count_wagons;
     }
 
-    void AddWagons(int numb_new_wagons) {
+    public void AddWagons(int numb_new_wagons) {
         _count_wagons += numb_new_wagons;
+        _load_capacity = _load_capacity + 70 * numb_new_wagons;
     }
 }
